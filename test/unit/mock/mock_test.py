@@ -1,7 +1,9 @@
 import unittest
-from mock import Mock, patch
-from app.mock.Account import Account
 from requests.exceptions import ConnectionError
+
+from mock import Mock, patch
+
+from app.code.mock.Account import Account
 
 
 class TestMocking(unittest.TestCase):
@@ -26,7 +28,7 @@ class TestMocking(unittest.TestCase):
         self.assertEqual('Connection error occurred. Try Again.',
                          account.get_account(1))
 
-    @patch('app.mock.Account.requests')
+    @patch('app.code.mock.Account.requests')
     def test_get_current_balance(self, mock_request):
         mock_response = Mock()
         mock_response.status_code = 200

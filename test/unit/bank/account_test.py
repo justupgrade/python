@@ -1,5 +1,6 @@
 import unittest
-from app.bank.account import Account
+
+from app.code.bank.account import Account
 
 
 class AccountTest(unittest.TestCase):
