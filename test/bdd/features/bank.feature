@@ -12,3 +12,12 @@ Scenario Outline:   Retrieve customer balance
             And I visit the homepage
             When I enter the account number "1111"
             Then I see the balance of "50"
+
+@mytag
+Scenario: Retrieve some other account
+            Given I create following account:
+            | account_number    | balance   |
+            | 2222              | 100       |
+            And I visit the homepage
+            When I enter the account number "2222"
+            Then I see the balance of "100"
